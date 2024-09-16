@@ -1,0 +1,12 @@
+# Load and run the model:
+vllm serve "NousResearch/Nous-Capybara-34B"
+
+# Call the server using curl:
+curl -X POST "http://localhost:8000/v1/chat/completions" \ 
+	-H "Content-Type: application/json" \ 
+	--data '{
+		"model": "NousResearch/Nous-Capybara-34B"
+		"messages": [
+			{"role": "user", "content": "Hello!"}
+		]
+	}'
